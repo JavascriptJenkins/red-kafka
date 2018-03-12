@@ -12,7 +12,7 @@ class KafkaProducerController {
 
 
     @Autowired
-    KafkaProducerConfig kafkaProducerWorker
+    KafkaProducerConfig kafkaProducerConfig
 
 
 
@@ -23,7 +23,7 @@ class KafkaProducerController {
 
         System.out.println("kafkaWorker.sendMessage(): ");
 
-        return kafkaProducerWorker.sendMessage(msg)
+        return kafkaProducerConfig.sendMessage(msg)
     }
 
 
