@@ -1,0 +1,8 @@
+FROM confluentinc/cp-zookeeper
+
+ENV USER_NAME=kafka \
+USER_UID=1001
+
+RUN chmod g=u /etc/passwd
+
+USER 1001
