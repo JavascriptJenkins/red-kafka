@@ -24,29 +24,29 @@ public class KafkaConfig {
     @Value("${kafka.bootstrap.servers}")
     private String bootstrapServers;
 
-    @Bean
-    public ConsumerFactory<String, String> consumerFactory() {
-        LOG.info("Connecting to broker {}", bootstrapServers);
-        System.out.println("Connecting to broker {}" + bootstrapServers);
-
-        Map<String, Object> props = new HashMap();
-        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
-        props.put(ConsumerConfig.GROUP_ID_CONFIG, "kafka-broker-test");
-        props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
-        props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
-        props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "true");
-        props.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, 1000);
-
-        return new DefaultKafkaConsumerFactory(props);
-    }
-
-    @Bean
-    public ConcurrentKafkaListenerContainerFactory<String, String> kafkaListenerContainerFactory() {
-
-        ConcurrentKafkaListenerContainerFactory<String, String> factory = new ConcurrentKafkaListenerContainerFactory();
-        factory.setConsumerFactory(consumerFactory());
-        return factory;
-    }
+//    @Bean
+//    public ConsumerFactory<String, String> consumerFactory() {
+//        LOG.info("Connecting to broker {}", bootstrapServers);
+//        System.out.println("Connecting to broker {}" + bootstrapServers);
+//
+//        Map<String, Object> props = new HashMap();
+//        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+//        props.put(ConsumerConfig.GROUP_ID_CONFIG, "kafka-broker-test");
+//        props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
+//        props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
+//        props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "true");
+//        props.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, 1000);
+//
+//        return new DefaultKafkaConsumerFactory(props);
+//    }
+//
+//    @Bean
+//    public ConcurrentKafkaListenerContainerFactory<String, String> kafkaListenerContainerFactory() {
+//
+//        ConcurrentKafkaListenerContainerFactory<String, String> factory = new ConcurrentKafkaListenerContainerFactory();
+//        factory.setConsumerFactory(consumerFactory());
+//        return factory;
+//    }
 
     ///////////////////////////////// PRODUCER CODE IS BELOW ////////////////////////////////////////
 
