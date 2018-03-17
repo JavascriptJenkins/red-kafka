@@ -34,7 +34,7 @@ class SFTPDataStreamImpl implements SFTPDataStream{
 
         String datadirectory = "data directory"
 
-        sftpStreamingMessageSource.setRemoteDirectory(datadirecttory)
+        sftpStreamingMessageSource.setRemoteDirectory(datadirectory)
 
         // this step is not technically needed
         sourcePollingChannelAdapter.setSource(sftpStreamingMessageSource)
