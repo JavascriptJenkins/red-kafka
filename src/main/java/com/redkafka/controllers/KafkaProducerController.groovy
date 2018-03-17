@@ -1,5 +1,6 @@
-package com.redkafka
+package com.redkafka.controllers
 
+import com.redkafka.KafkaProducer
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
