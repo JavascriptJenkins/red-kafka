@@ -9,7 +9,7 @@ import org.springframework.kafka.support.ProducerListener
 
 
 @Configuration
-class KafkaProducerConfig implements ProducerListener  {
+class KafkaProducer implements ProducerListener  {
 
 
 

@@ -1,8 +1,7 @@
 package com.redkafka.impl
 
-import com.redkafka.KafkaProducerConfig
+import com.redkafka.KafkaProducer
 import com.redkafka.SFTPDataStream
-import org.apache.kafka.clients.producer.KafkaProducer
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.integration.config.EnableIntegration
 import org.springframework.integration.endpoint.SourcePollingChannelAdapter
@@ -21,8 +20,9 @@ class SFTPDataStreamImpl implements SFTPDataStream{
     @Autowired
     SftpStreamingMessageSource sftpStreamingMessageSource
 
+    // this is not apache.kafkaproducer, this is a class that is named the same thing
     @Autowired
-    KafkaProducerConfig kafkaProducer
+    KafkaProducer kafkaProducer
 
     InputStream inputStream
 

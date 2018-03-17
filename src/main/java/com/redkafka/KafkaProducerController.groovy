@@ -12,7 +12,7 @@ class KafkaProducerController {
 
 
     @Autowired
-    KafkaProducerConfig kafkaProducerConfig
+    KafkaProducer kafkaProducerConfig
 
 
 
